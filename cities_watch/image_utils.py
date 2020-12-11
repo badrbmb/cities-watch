@@ -101,7 +101,7 @@ def load_dmsp_ols_collection(start_date, end_date, geometry=None, apply_scaling=
         dmsp_ols_collection = dmsp_ols_collection.filterBounds(geometry)
 
     if apply_scaling:
-        # apply up-scaling to each image
+        # apply scaling to each image
         scaling_img = get_scaling_image_ols_dnb(use_image=use_image)
         dmsp_ols_collection = dmsp_ols_collection.map(lambda x: x.multiply(scaling_img))
 
